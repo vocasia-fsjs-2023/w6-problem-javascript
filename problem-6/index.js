@@ -1,5 +1,24 @@
 function deepSum (arr) {
     // Code disini
+    let hasil = 0;
+
+  for (let r = 0; r < arr.length; r++) {
+    const angka1 = arr[r];
+
+    for (let o = 0; o < angka1.length; o++) {
+      const angka2 = angka1[o];
+
+      for (let m = 0; m < angka2.length; m++) {
+        const nomor = angka2[m];
+
+        if (typeof nomor === 'number') {
+          hasil += nomor;
+        }
+      }
+    }
+  }
+
+  return hasil === 0 ? 'No number' : hasil;
   }
   
   //TEST CASE
