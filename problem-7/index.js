@@ -1,5 +1,16 @@
 function highestScore (students) {
     // Code disini
+    const hasil = {};
+
+  for (const mahasiswa of students) {
+    const { name, score, class: className } = mahasiswa;
+
+    if (!hasil[className] || score > hasil[className].score) {
+      hasil[className] = { name, score };
+    }
+  }
+
+  return hasil;
   }
   
   // TEST CASE
