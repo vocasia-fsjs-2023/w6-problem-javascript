@@ -1,5 +1,11 @@
 function ladder(word) {
 //your code here
+  const result = [];
+  const letters = word.split('');
+  for (let i = letters.length; i > 0; i--) {
+    result.push(letters.slice(0, i));
+  }
+  return result;
 }
   
 console.log(ladder('vocasia'));
