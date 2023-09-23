@@ -1,9 +1,20 @@
 function deepSum (arr) {
     // Code disini
+    let total = 0; 
+    for (const item of arr) {
+    // Memeriksa apakah 'item' saat ini adalah sebuah array atau angka
+    if (Array.isArray(item)) {
+      // Jika itu adalah sebuah array, panggil  deepSum dan tambahkan hasilnya ke total
+      total += deepSum(item);
+    } else if (typeof item === 'number') {
+      // Jika itu adalah sebuah angka, tambahkan langsung ke total
+      total += item;
+    }
   }
-  
-  //TEST CASE
-  console.log(deepSum([
+  return total; 
+}
+//TEST CASE
+console.log(deepSum([
     [
       [4, 5, 6],
       [9, 1, 2, 10],
