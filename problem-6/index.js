@@ -1,7 +1,28 @@
-function deepSum (arr) {
-    // Code disini
+function deepSum(arr) {
+  let total = 0;
+
+  function recursiveSum(array) {
+    if (array.length === 0) {
+      return;
+    }
+    const element = array.shift(); 
+    if (Array.isArray(element)) {
+      
+      recursiveSum(element);
+    } else if (typeof element === 'number') {
+      
+      total += element;
+    }  
+    recursiveSum(array);
+  }  
+  recursiveSum(arr);
+  if (total === 0) {
+    return 'No number';
   }
-  
+
+  return total;
+}
+    
   //TEST CASE
   console.log(deepSum([
     [
