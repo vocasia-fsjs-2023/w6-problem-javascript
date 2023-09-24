@@ -1,23 +1,28 @@
-function highestScore(students) {
+function graduates(students) {
     let result = {};
   
     for (let i = 0; i < students.length; i++) {
       let student = students[i];
       let className = student.class;
   
-      if (!result[className] || student.score > result[className].score) {
-        result[className] = {
+      if (student.score > 75) {
+        if (!result[className]) {
+          result[className] = [];
+        }
+  
+        let studentData = {
           name: student.name,
           score: student.score,
         };
+  
+        result[className].push(studentData);
       }
     }
   
     return result;
   }
   
-  // TEST CASE
-  console.log(highestScore([
+  console.log(graduates([
     {
       name: 'Dimitri',
       score: 90,
@@ -40,7 +45,7 @@ function highestScore(students) {
     }
   ]));
   
-  console.log(highestScore([
+  console.log(graduates([
     {
       name: 'Alexander',
       score: 100,
@@ -68,5 +73,5 @@ function highestScore(students) {
     }
   ]));
   
-  console.log(highestScore([])); // {}
+  console.log(graduates([]));
   
