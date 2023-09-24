@@ -1,5 +1,28 @@
 function changeMe(arr) {
     // Tulis codemu disini dan console log hasilnya
+    const currentYear = new Date().getFullYear();
+  if (arr.length === 0) {
+    console.log('""');
+    return;
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    const [firstName, lastName, gender, birthYear] = arr[i];
+    let age;
+    if (typeof birthYear === 'number' && birthYear <= currentYear) {
+      age = currentYear - birthYear;
+    } else {
+      age = 'Invalid Birth Year';
+    }
+    const person = {
+      firstName,
+      lastName,
+      gender,
+      age,
+    };
+    console.log(`${firstName} ${lastName}:`);
+    console.log(person);
+  }
 }
   
   // TEST CASES
