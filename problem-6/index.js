@@ -1,6 +1,21 @@
 function deepSum (arr) {
     // Code disini
-  }
+    if (arr.length === 0) {
+        return 'No number';
+      }
+    
+      let jumlah = 0;
+    
+      for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+          for (let k = 0; k < arr[i][j].length; k++) {
+            jumlah += arr[i][j][k];
+          }
+        }
+      }
+    
+      return jumlah;
+}
   
   //TEST CASE
   console.log(deepSum([
