@@ -1,5 +1,18 @@
 function cariMedian(arr) {
     // code disini
+
+    arr.sort((a, b) => a - b);
+
+    const indexTengah = Math.floor(arr.length / 2);
+  
+    if (arr.length % 2 === 1) {
+      return arr[indexTengah];
+    } else {
+      const median1 = arr[indexTengah - 1];
+      const median2 = arr[indexTengah];
+      return (median1 + median2) / 2;
+    }
+
   }
   
   // TEST CASES
