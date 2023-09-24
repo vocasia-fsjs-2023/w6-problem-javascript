@@ -1,13 +1,15 @@
 function deepSum (arr) {
     // Code disini
-      var total = 0;
+    var total = 0;
 
   function sumArray(arr) {
-    for (var i = 0; i < arr.length; i++) {
-      if (Array.isArray(arr[i])) {
-        sumArray(arr[i]);
-      } else if (typeof arr[i] === 'number') {
-        total += arr[i];
+    while (arr.length > 0) {
+      var element = arr.shift();
+
+      if (Array.isArray(element)) {
+        sumArray(element);
+      } else if (typeof element === 'number') {
+        total += element;
       }
     }
   }
