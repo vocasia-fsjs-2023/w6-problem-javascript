@@ -1,14 +1,13 @@
 function ladder(word) {
-//your code here
-}
+  const result = [];
+  const letters = word.split('');
   
+  for (let i = 0; i < letters.length; i++) {
+    const subArray = letters.slice(0, letters.length - i);
+    result.push(subArray);
+  }
+  
+  return result;
+}
+
 console.log(ladder('vocasia'));
-//   [
-//     [ 'v', 'o', 'c', 'a', 's', 'i', 'a' ],
-//     [ 'v', 'o', 'c', 'a', 's', 'i' ],
-//     [ 'v', 'o', 'c', 'a', 's' ],
-//     [ 'v', 'o', 'c', 'a' ],
-//     [ 'v', 'o', 'c' ],
-//     [ 'v', 'o' ],
-//     [ 'v'],
-//   ]
