@@ -1,5 +1,24 @@
 function changeMe(arr) {
     // Tulis codemu disini dan console log hasilnya
+    for (var i = 0; i < arr.length; i++) {
+    var obj = {};
+    obj.firstName = arr[i][0];
+    obj.lastName = arr[i][1];
+    obj.gender = arr[i][2];
+    if (arr[i][3] !== undefined) {
+      obj.age = new Date().getFullYear() - arr[i][3];
+    } else {
+      obj.age = 'Invalid Birth Year';
+    }
+    
+    console.log((i + 1) + '. ' + obj.firstName + ' ' + obj.lastName + ':');
+    console.log(obj);
+  }
+
+  if (arr.length === 0) {
+    console.log('""');
+  }
+
 }
   
   // TEST CASES
