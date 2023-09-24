@@ -1,5 +1,19 @@
-function highestScore (students) {
-    // Code disini
+function highestScore(students) {
+    let result = {};
+  
+    for (let i = 0; i < students.length; i++) {
+      let student = students[i];
+      let className = student.class;
+  
+      if (!result[className] || student.score > result[className].score) {
+        result[className] = {
+          name: student.name,
+          score: student.score,
+        };
+      }
+    }
+  
+    return result;
   }
   
   // TEST CASE
@@ -25,12 +39,6 @@ function highestScore (students) {
       class: 'wolves'
     }
   ]));
-  
-  // {
-  //   foxes: { name: 'Dimitri', score: 90 },
-  //   wolves: { name: 'Alexei', score: 85 }
-  // }
-  
   
   console.log(highestScore([
     {
@@ -60,11 +68,5 @@ function highestScore (students) {
     }
   ]));
   
-  // {
-  //   foxes: { name: 'Alexander', score: 100 },
-  //   wolves: { name: 'Alisa', score: 76 },
-  //   tigers: { name: 'Viktor', score: 80 }
-  // }
+  console.log(highestScore([])); // {}
   
-  
-  console.log(highestScore([])); //{}
