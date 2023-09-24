@@ -1,14 +1,18 @@
 function ladder(word) {
-//your code here
-}
+    const result = [];
+    const len = word.length;
   
-console.log(ladder('vocasia'));
-//   [
-//     [ 'v', 'o', 'c', 'a', 's', 'i', 'a' ],
-//     [ 'v', 'o', 'c', 'a', 's', 'i' ],
-//     [ 'v', 'o', 'c', 'a', 's' ],
-//     [ 'v', 'o', 'c', 'a' ],
-//     [ 'v', 'o', 'c' ],
-//     [ 'v', 'o' ],
-//     [ 'v'],
-//   ]
+    for (let i = 0; i < len; i++) {
+      const row = [];
+      for (let j = 0; j < len - i; j++) {
+        row.push(word[j]);
+      }
+      result.push(row);
+    }
+  
+    return result;
+  }
+  
+  // DRIVER CODE
+  console.log(ladder('vocasia'));
+  
