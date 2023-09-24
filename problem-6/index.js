@@ -1,5 +1,17 @@
 function deepSum (arr) {
     // Code disini
+    let sum = 0;
+    function sumArray(arr) {
+      for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+          sumArray(arr[i]);
+        } else if (typeof arr[i] === 'number') {
+          sum += arr[i];
+        }
+      }
+    }
+    sumArray(arr);
+    return sum > 0 ? sum : 'No number';
   }
   
   //TEST CASE
