@@ -9,17 +9,16 @@ function changeMe(arr) {
       obj.age = new Date().getFullYear() - arr[i][3];
     } else {
       obj.age = 'Invalid Birth Year';
-    }
-    
+    };
     console.log((i + 1) + '. ' + obj.firstName + ' ' + obj.lastName + ':');
     console.log(obj);
-  }
+  };
 
   if (arr.length === 0) {
     console.log('""');
-  }
+  };
 
-}
+};
   
   // TEST CASES
   changeMe([['Christ', 'Evans', 'Male', 1982], ['Robert', 'Downey', 'Male']]); 
