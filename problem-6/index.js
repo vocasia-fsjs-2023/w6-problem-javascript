@@ -1,5 +1,19 @@
 function deepSum (arr) {
     // Code disini
+
+    let sum = 0;
+
+    while (arr.length > 0) {
+      const element = arr.shift();
+  
+      if (Array.isArray(element)) {
+        sum += deepSum(element);
+      } else if (typeof element === 'number') {
+        sum += element;
+      }
+    }
+  
+    return sum > 0 ? sum : 'No number';
   }
   
   //TEST CASE

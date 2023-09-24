@@ -1,5 +1,18 @@
 function ladder(word) {
-//your code here
+    
+const result = [];
+const wLad = word.split(''); 
+   
+    for (let i = wLad.length; i > 0; i--){
+        const der = [];
+        
+        for (let j = 0; j < i; j++ ){
+            der.push(wLad[j]);
+        }
+        result.push(der)
+    }
+    return result;
+     
 }
   
 console.log(ladder('vocasia'));
@@ -12,3 +25,4 @@ console.log(ladder('vocasia'));
 //     [ 'v', 'o' ],
 //     [ 'v'],
 //   ]
+
