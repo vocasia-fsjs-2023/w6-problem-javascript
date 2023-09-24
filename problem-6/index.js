@@ -1,5 +1,22 @@
 function deepSum (arr) {
     // Code disini
+    var total = 0;
+
+  function sumArray(arr) {
+    while (arr.length > 0) {
+      var element = arr.shift();
+
+      if (Array.isArray(element)) {
+        sumArray(element);
+      } else if (typeof element === 'number') {
+        total += element;
+      }
+    }
+  }
+
+  sumArray(arr);
+
+  return total || 'No number';
   }
   
   //TEST CASE

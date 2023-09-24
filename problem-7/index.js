@@ -1,6 +1,25 @@
 function highestScore (students) {
     // Code disini
-  }
+    var result = {};
+
+  for (var i = 0; i < students.length; i++) {
+    var student = students[i];
+
+    if (student.score > 75) {
+      if (!result[student.class]) {
+        result[student.class] = [];
+      };
+
+      result[student.class].push({
+        name: student.name,
+        score: student.score,
+      });
+    };
+  };
+
+  return result;
+
+  };
   
   // TEST CASE
   console.log(highestScore([
