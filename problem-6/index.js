@@ -1,5 +1,20 @@
 function deepSum (arr) {
     // Code disini
+      var total = 0;
+
+  function sumArray(arr) {
+    for (var i = 0; i < arr.length; i++) {
+      if (Array.isArray(arr[i])) {
+        sumArray(arr[i]);
+      } else if (typeof arr[i] === 'number') {
+        total += arr[i];
+      }
+    }
+  }
+
+  sumArray(arr);
+
+  return total || 'No number';
   }
   
   //TEST CASE
