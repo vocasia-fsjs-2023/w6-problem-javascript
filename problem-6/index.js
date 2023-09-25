@@ -1,6 +1,24 @@
 function deepSum (arr) {
     // Code disini
+    if (arr.length === 0) {
+    return 'No number';
   }
+    let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    let layer1 = arr[i];
+
+    for (let j = 0; j < layer1.length; j++) {
+      let layer2 = layer1[j];
+
+      for (let k = 0; k < layer2.length; k++) {
+        sum += layer2[k];
+      }
+    }
+  }
+
+  return sum;
+}
   
   //TEST CASE
   console.log(deepSum([
