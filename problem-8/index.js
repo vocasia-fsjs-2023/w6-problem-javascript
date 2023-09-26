@@ -1,6 +1,17 @@
 function cariMedian(arr) {
     // code disini
+  arr.sort(function(a, b) {
+    return a - b;
+  });
+
+  var middleIndex = Math.floor(arr.length / 2);
+
+  if (arr.length % 2 === 1) {
+    return arr[middleIndex];
+  } else {
+    return (arr[middleIndex - 1] + arr[middleIndex]) / 2;
   }
+}
   
   // TEST CASES
   console.log(cariMedian([1, 2, 3, 4, 5])); // 3
