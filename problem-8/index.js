@@ -1,5 +1,19 @@
 function cariMedian(arr) {
     // code disini
+    arr.sort(function(a, b) {
+      return a - b;
+    });
+
+    const middleIndex = Math.floor(arr.length / 2);
+  
+    if (arr.length % 2 !== 0) {
+      return arr[middleIndex];
+    } else {
+
+      const middleValue1 = arr[middleIndex];
+      const middleValue2 = arr[middleIndex - 1];
+      return (middleValue1 + middleValue2) / 2;
+    }
   }
   
   // TEST CASES
