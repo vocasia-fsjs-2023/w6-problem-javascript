@@ -1,5 +1,19 @@
 function highestScore (students) {
     // Code disini
+    let result = {};
+
+    while (students.length > 0) {
+      const student = students.shift();
+  
+      if (!result[student.class] || student.score > result[student.class].score) {
+        result[student.class] = {
+          name: student.name,
+          score: student.score,
+        };
+      }
+    }
+  
+    return result;
   }
   
   // TEST CASE
