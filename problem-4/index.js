@@ -1,6 +1,25 @@
 function changeMe(arr) {
-    // Tulis codemu disini dan console log hasilnya
-}
+    // you can only write your code here!
+    const tahunBaru = 2023;
+
+    for (let i = 0; i < arr.length; i++) {
+        let person = {};
+
+        person.firstName = arr[i].shift(); 
+        person.lastName = arr[i].shift();
+        person.gender = arr[i].shift();   
+
+        const tahunLahir = arr[i].shift(); 
+        if (!tahunLahir || tahunLahir > tahunBaru) {
+            person.age = 'Invalid Birth Year';
+        } else {
+            person.age = tahunBaru - tahunLahir;
+        }
+
+        console.log((i+1) + '. ' + person.firstName + ' ' + person.lastName + ':');
+        console.log(person);
+    }
+      }  
   
   // TEST CASES
   changeMe([['Christ', 'Evans', 'Male', 1982], ['Robert', 'Downey', 'Male']]); 
