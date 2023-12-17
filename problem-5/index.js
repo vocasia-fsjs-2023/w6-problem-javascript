@@ -1,6 +1,22 @@
 function graduates (students) {
     // Code disini
-  }
+    let hasil = {};
+
+    for (let key in students) {
+        const student = students[key];
+        if (student.score > 75) {
+            if (!hasil[student.class]) {
+                hasil[student.class] = [];
+            }
+            hasil[student.class].push({
+                name: student.name,
+                score: student.score
+            });
+        }
+    }
+    return hasil;
+}
+
   
   console.log(graduates([
     {
@@ -78,3 +94,4 @@ function graduates (students) {
   
   
   console.log(graduates([])); //{}
+  
